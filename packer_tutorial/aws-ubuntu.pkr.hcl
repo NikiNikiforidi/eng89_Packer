@@ -8,9 +8,9 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "learn-packer-linux-aws"
+  ami_name      = "eng89_niki_packer" # Add ami name
   instance_type = "t2.micro"
-  region        = "us-west-1"
+  region        = "eu-west-1" # update reagion
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
@@ -24,7 +24,7 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  name    = "learn-packer"
+  name = "learn-packer"
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
